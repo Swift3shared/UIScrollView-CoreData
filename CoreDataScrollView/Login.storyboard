@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ayy-zc-X10">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="Scm-bm-i3m">
+            <objects>
+                <viewController storyboardIdentifier="loginViewControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ITq-C8-0hx" customClass="LoginViewController" customModule="CoreDataScrollView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xj5-Zk-QeW"/>
+                        <viewControllerLayoutGuide type="bottom" id="vDi-n5-ltN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wjd-au-vbu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P4Z-D0-DPH" customClass="CDSUITextField" customModule="CoreDataScrollView" customModuleProvider="target">
+                                <rect key="frame" x="16" y="190" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="VvF-Hp-4bm"/>
+                                    <constraint firstAttribute="width" constant="288" id="usD-Hs-QEY"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderRaduis">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWith">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sYb-a2-h9d" customClass="CDSUITextField" customModule="CoreDataScrollView" customModuleProvider="target">
+                                <rect key="frame" x="16" y="228" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="fOe-9q-5S7"/>
+                                    <constraint firstAttribute="width" constant="288" id="lvi-1f-nEK"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWith">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZw-AR-DWt">
+                                <rect key="frame" x="134" y="271" width="52" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="52" id="ASD-VA-jrL"/>
+                                    <constraint firstAttribute="height" constant="30" id="fBP-fT-ErT"/>
+                                </constraints>
+                                <state key="normal" title="Sign up">
+                                    <color key="titleColor" red="1" green="0.2082195622487969" blue="0.16339715224607365" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="OEJ-WD-ty2" kind="show" id="dE1-3D-JqP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOo-rm-s1j" customClass="CDSUIButton" customModule="CoreDataScrollView" customModuleProvider="target">
+                                <rect key="frame" x="16" y="313" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Aqy-hw-RvU"/>
+                                    <constraint firstAttribute="width" constant="288" id="VN9-E4-EAZ"/>
+                                </constraints>
+                                <state key="normal" title="Log in">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWith">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2M-P8-QuC">
+                                <rect key="frame" x="130" y="153" width="60" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="9Rl-eW-Pzu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.20821956220000001" blue="0.16339715220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="P4Z-D0-DPH" firstAttribute="top" secondItem="L2M-P8-QuC" secondAttribute="bottom" constant="16" id="1ys-Pi-2Ky"/>
+                            <constraint firstItem="qZw-AR-DWt" firstAttribute="centerX" secondItem="Wjd-au-vbu" secondAttribute="centerX" id="4GO-4h-WAd"/>
+                            <constraint firstItem="L2M-P8-QuC" firstAttribute="centerX" secondItem="Wjd-au-vbu" secondAttribute="centerX" id="BGs-c3-WpN"/>
+                            <constraint firstItem="L2M-P8-QuC" firstAttribute="top" secondItem="Xj5-Zk-QeW" secondAttribute="bottom" constant="89" id="Ogr-lR-pCc"/>
+                            <constraint firstItem="P4Z-D0-DPH" firstAttribute="centerX" secondItem="Wjd-au-vbu" secondAttribute="centerX" id="RNl-nN-7hX"/>
+                            <constraint firstItem="sYb-a2-h9d" firstAttribute="centerX" secondItem="Wjd-au-vbu" secondAttribute="centerX" id="b1M-96-oz1"/>
+                            <constraint firstItem="kOo-rm-s1j" firstAttribute="centerX" secondItem="Wjd-au-vbu" secondAttribute="centerX" id="oOs-Ws-2ON"/>
+                            <constraint firstItem="qZw-AR-DWt" firstAttribute="top" secondItem="sYb-a2-h9d" secondAttribute="bottom" constant="13" id="uax-wQ-Eim"/>
+                            <constraint firstItem="sYb-a2-h9d" firstAttribute="top" secondItem="P4Z-D0-DPH" secondAttribute="bottom" constant="8" id="vt2-68-9hJ"/>
+                            <constraint firstItem="kOo-rm-s1j" firstAttribute="top" secondItem="qZw-AR-DWt" secondAttribute="bottom" constant="12" id="wm4-JH-kgy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="FbH-6g-saO"/>
+                    <connections>
+                        <outlet property="loginButton" destination="kOo-rm-s1j" id="yzk-xH-y7j"/>
+                        <outlet property="passwordTextField" destination="sYb-a2-h9d" id="B5M-hD-kwc"/>
+                        <outlet property="userNameTextField" destination="P4Z-D0-DPH" id="j9f-Av-Pyc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ovB-Xz-pIp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="213.75" y="75"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="tBr-7Q-pPu">
+            <objects>
+                <viewController id="OEJ-WD-ty2" customClass="SignUpViewController" customModule="CoreDataScrollView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fNw-pb-X0w"/>
+                        <viewControllerLayoutGuide type="bottom" id="lH1-jH-xeo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pWd-uv-SHF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n5m-8W-6FS" customClass="CDSUITextField" customModule="CoreDataScrollView" customModuleProvider="target">
+                                <rect key="frame" x="16" y="191" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ace-Fh-MsG"/>
+                                    <constraint firstAttribute="width" constant="288" id="f3y-oM-phi"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWith">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QOx-g1-kdX" customClass="CDSUITextField" customModule="CoreDataScrollView" customModuleProvider="target">
+                                <rect key="frame" x="16" y="229" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="bcC-UY-J8t"/>
+                                    <constraint firstAttribute="height" constant="30" id="dlZ-Fb-0UY"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWith">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verified password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jd5-WH-I6H" customClass="CDSUITextField" customModule="CoreDataScrollView" customModuleProvider="target">
+                                <rect key="frame" x="16" y="267" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="Rdf-70-Wnh"/>
+                                    <constraint firstAttribute="height" constant="30" id="tkI-UU-bgb"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWith">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date of birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UHe-l9-6Bz" customClass="CDSUITextField" customModule="CoreDataScrollView" customModuleProvider="target">
+                                <rect key="frame" x="16" y="305" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="Fc6-bY-Y1w"/>
+                                    <constraint firstAttribute="height" constant="30" id="Uxo-f5-aNF"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWith">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="dateOfBirthTouchDown:" destination="OEJ-WD-ty2" eventType="touchDown" id="w8F-eP-ELa"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Place of birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="teD-Cu-wPs" customClass="CDSUITextField" customModule="CoreDataScrollView" customModuleProvider="target">
+                                <rect key="frame" x="16" y="343" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="bv4-dp-kyo"/>
+                                    <constraint firstAttribute="width" constant="288" id="sNq-DO-3do"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWith">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wor-bR-u3f" customClass="CDSUIButton" customModule="CoreDataScrollView" customModuleProvider="target">
+                                <rect key="frame" x="16" y="402" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ja2-oG-I0J"/>
+                                    <constraint firstAttribute="width" constant="288" id="Ooz-aw-qio"/>
+                                </constraints>
+                                <state key="normal" title="Sign up">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWith">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="teD-Cu-wPs" firstAttribute="top" secondItem="fNw-pb-X0w" secondAttribute="bottom" constant="279" id="CMe-OW-yLF"/>
+                            <constraint firstItem="Jd5-WH-I6H" firstAttribute="top" secondItem="QOx-g1-kdX" secondAttribute="bottom" constant="8" id="Ejp-p2-tvo"/>
+                            <constraint firstItem="Wor-bR-u3f" firstAttribute="top" secondItem="teD-Cu-wPs" secondAttribute="bottom" constant="29" id="H06-IR-tie"/>
+                            <constraint firstItem="UHe-l9-6Bz" firstAttribute="top" secondItem="Jd5-WH-I6H" secondAttribute="bottom" constant="8" id="Iaa-Wa-NFZ"/>
+                            <constraint firstItem="n5m-8W-6FS" firstAttribute="top" secondItem="fNw-pb-X0w" secondAttribute="bottom" constant="127" id="JRa-wR-t15"/>
+                            <constraint firstItem="Wor-bR-u3f" firstAttribute="centerX" secondItem="pWd-uv-SHF" secondAttribute="centerX" id="Nac-FZ-lfp"/>
+                            <constraint firstItem="teD-Cu-wPs" firstAttribute="centerX" secondItem="pWd-uv-SHF" secondAttribute="centerX" id="QOB-Ca-bzt"/>
+                            <constraint firstItem="QOx-g1-kdX" firstAttribute="centerX" secondItem="pWd-uv-SHF" secondAttribute="centerX" id="Tjv-vB-14A"/>
+                            <constraint firstItem="UHe-l9-6Bz" firstAttribute="centerX" secondItem="pWd-uv-SHF" secondAttribute="centerX" id="gbr-So-vhk"/>
+                            <constraint firstItem="QOx-g1-kdX" firstAttribute="top" secondItem="n5m-8W-6FS" secondAttribute="bottom" constant="8" id="js9-mE-xX0"/>
+                            <constraint firstItem="Jd5-WH-I6H" firstAttribute="centerX" secondItem="pWd-uv-SHF" secondAttribute="centerX" id="noR-la-Vbj"/>
+                            <constraint firstItem="n5m-8W-6FS" firstAttribute="centerX" secondItem="pWd-uv-SHF" secondAttribute="centerX" id="syp-6C-qT9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dateOfBirthTextField" destination="UHe-l9-6Bz" id="Ebj-1Z-fAg"/>
+                        <outlet property="passwordTextField" destination="QOx-g1-kdX" id="f6O-Jf-dcU"/>
+                        <outlet property="placeOfBirthTextField" destination="teD-Cu-wPs" id="Rle-Ct-p7I"/>
+                        <outlet property="userNameTextField" destination="n5m-8W-6FS" id="idH-Uh-SvZ"/>
+                        <outlet property="verifiedPasswordTextField" destination="Jd5-WH-I6H" id="mRN-Tk-bP5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YYy-ef-Nq5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1067" y="75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hPD-dA-iPC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ayy-zc-X10" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="i2F-r8-lGM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="0.20821956220000001" blue="0.16339715220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ITq-C8-0hx" kind="relationship" relationship="rootViewController" id="7Qs-MH-dFj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sah-2g-pfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-783.75" y="75"/>
+        </scene>
+    </scenes>
+</document>

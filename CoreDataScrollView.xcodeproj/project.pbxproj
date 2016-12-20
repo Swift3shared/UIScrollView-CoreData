@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		887CF87F1E090531008606CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887CF87E1E090531008606CF /* AppDelegate.swift */; };
-		887CF8811E090531008606CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887CF8801E090531008606CF /* ViewController.swift */; };
-		887CF8841E090532008606CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887CF8821E090532008606CF /* Main.storyboard */; };
 		887CF8861E090532008606CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 887CF8851E090532008606CF /* Assets.xcassets */; };
-		887CF8891E090532008606CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887CF8871E090532008606CF /* LaunchScreen.storyboard */; };
+		887CF8911E090572008606CF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887CF8901E090572008606CF /* Login.storyboard */; };
+		887CF8931E092EDF008606CF /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887CF8921E092EDF008606CF /* CustomView.swift */; };
+		887CF8951E09372B008606CF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887CF8941E09372B008606CF /* LoginViewController.swift */; };
+		887CF8971E0937F5008606CF /* Popup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887CF8961E0937F5008606CF /* Popup.storyboard */; };
+		887CF8991E0938FD008606CF /* PickerViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887CF8981E0938FD008606CF /* PickerViewViewController.swift */; };
+		887CF89B1E093985008606CF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887CF89A1E093985008606CF /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		887CF87B1E090531008606CF /* CoreDataScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		887CF87E1E090531008606CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		887CF8801E090531008606CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		887CF8831E090532008606CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		887CF8851E090532008606CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		887CF8881E090532008606CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		887CF88A1E090532008606CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		887CF8901E090572008606CF /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		887CF8921E092EDF008606CF /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		887CF8941E09372B008606CF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		887CF8961E0937F5008606CF /* Popup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Popup.storyboard; sourceTree = "<group>"; };
+		887CF8981E0938FD008606CF /* PickerViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewViewController.swift; sourceTree = "<group>"; };
+		887CF89A1E093985008606CF /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +61,14 @@
 			isa = PBXGroup;
 			children = (
 				887CF87E1E090531008606CF /* AppDelegate.swift */,
-				887CF8801E090531008606CF /* ViewController.swift */,
-				887CF8821E090532008606CF /* Main.storyboard */,
 				887CF8851E090532008606CF /* Assets.xcassets */,
-				887CF8871E090532008606CF /* LaunchScreen.storyboard */,
 				887CF88A1E090532008606CF /* Info.plist */,
+				887CF8901E090572008606CF /* Login.storyboard */,
+				887CF8921E092EDF008606CF /* CustomView.swift */,
+				887CF8941E09372B008606CF /* LoginViewController.swift */,
+				887CF8961E0937F5008606CF /* Popup.storyboard */,
+				887CF8981E0938FD008606CF /* PickerViewViewController.swift */,
+				887CF89A1E093985008606CF /* SignUpViewController.swift */,
 			);
 			path = CoreDataScrollView;
 			sourceTree = "<group>";
@@ -96,6 +105,7 @@
 				TargetAttributes = {
 					887CF87A1E090531008606CF = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 8Y5V7RQGVY;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -123,9 +133,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				887CF8891E090532008606CF /* LaunchScreen.storyboard in Resources */,
+				887CF8971E0937F5008606CF /* Popup.storyboard in Resources */,
+				887CF8911E090572008606CF /* Login.storyboard in Resources */,
 				887CF8861E090532008606CF /* Assets.xcassets in Resources */,
-				887CF8841E090532008606CF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,31 +146,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				887CF8811E090531008606CF /* ViewController.swift in Sources */,
+				887CF8951E09372B008606CF /* LoginViewController.swift in Sources */,
+				887CF8991E0938FD008606CF /* PickerViewViewController.swift in Sources */,
+				887CF8931E092EDF008606CF /* CustomView.swift in Sources */,
 				887CF87F1E090531008606CF /* AppDelegate.swift in Sources */,
+				887CF89B1E093985008606CF /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		887CF8821E090532008606CF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				887CF8831E090532008606CF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		887CF8871E090532008606CF /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				887CF8881E090532008606CF /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		887CF88B1E090532008606CF /* Debug */ = {
@@ -260,6 +254,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8Y5V7RQGVY;
 				INFOPLIST_FILE = CoreDataScrollView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = origin.nini.CoreDataScrollView;
@@ -272,6 +267,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8Y5V7RQGVY;
 				INFOPLIST_FILE = CoreDataScrollView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = origin.nini.CoreDataScrollView;
