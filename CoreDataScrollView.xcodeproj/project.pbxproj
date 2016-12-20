@@ -13,8 +13,8 @@
 		887CF8931E092EDF008606CF /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887CF8921E092EDF008606CF /* CustomView.swift */; };
 		887CF8951E09372B008606CF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887CF8941E09372B008606CF /* LoginViewController.swift */; };
 		887CF8971E0937F5008606CF /* Popup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887CF8961E0937F5008606CF /* Popup.storyboard */; };
-		887CF8991E0938FD008606CF /* PickerViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887CF8981E0938FD008606CF /* PickerViewViewController.swift */; };
-		887CF89B1E093985008606CF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887CF89A1E093985008606CF /* SignUpViewController.swift */; };
+		B9DB135E1E09749B00AE5F92 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB135D1E09749B00AE5F92 /* SignupViewController.swift */; };
+		B9DB13601E0974B400AE5F92 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB135F1E0974B400AE5F92 /* PickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +26,8 @@
 		887CF8921E092EDF008606CF /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		887CF8941E09372B008606CF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		887CF8961E0937F5008606CF /* Popup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Popup.storyboard; sourceTree = "<group>"; };
-		887CF8981E0938FD008606CF /* PickerViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewViewController.swift; sourceTree = "<group>"; };
-		887CF89A1E093985008606CF /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B9DB135D1E09749B00AE5F92 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		B9DB135F1E0974B400AE5F92 /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +67,8 @@
 				887CF8921E092EDF008606CF /* CustomView.swift */,
 				887CF8941E09372B008606CF /* LoginViewController.swift */,
 				887CF8961E0937F5008606CF /* Popup.storyboard */,
-				887CF8981E0938FD008606CF /* PickerViewViewController.swift */,
-				887CF89A1E093985008606CF /* SignUpViewController.swift */,
+				B9DB135D1E09749B00AE5F92 /* SignupViewController.swift */,
+				B9DB135F1E0974B400AE5F92 /* PickerViewController.swift */,
 			);
 			path = CoreDataScrollView;
 			sourceTree = "<group>";
@@ -146,11 +146,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9DB13601E0974B400AE5F92 /* PickerViewController.swift in Sources */,
 				887CF8951E09372B008606CF /* LoginViewController.swift in Sources */,
-				887CF8991E0938FD008606CF /* PickerViewViewController.swift in Sources */,
 				887CF8931E092EDF008606CF /* CustomView.swift in Sources */,
+				B9DB135E1E09749B00AE5F92 /* SignupViewController.swift in Sources */,
 				887CF87F1E090531008606CF /* AppDelegate.swift in Sources */,
-				887CF89B1E093985008606CF /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +295,7 @@
 				887CF88F1E090532008606CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ayy-zc-X10">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ayy-zc-X10">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -127,10 +127,10 @@
             </objects>
             <point key="canvasLocation" x="213.75" y="75"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--Signup View Controller-->
         <scene sceneID="tBr-7Q-pPu">
             <objects>
-                <viewController id="OEJ-WD-ty2" customClass="SignUpViewController" customModule="CoreDataScrollView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OEJ-WD-ty2" customClass="SignupViewController" customModule="CoreDataScrollView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fNw-pb-X0w"/>
                         <viewControllerLayoutGuide type="bottom" id="lH1-jH-xeo"/>
@@ -199,7 +199,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="dateOfBirthTouchDown:" destination="OEJ-WD-ty2" eventType="touchDown" id="w8F-eP-ELa"/>
+                                    <action selector="dateOfBirthTouchDown:" destination="OEJ-WD-ty2" eventType="touchDown" id="CoH-ix-KUV"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Place of birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="teD-Cu-wPs" customClass="CDSUITextField" customModule="CoreDataScrollView" customModuleProvider="target">
@@ -216,6 +216,9 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="placeOfBirthTouchDown:" destination="OEJ-WD-ty2" eventType="touchDown" id="L6r-3p-dMA"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wor-bR-u3f" customClass="CDSUIButton" customModule="CoreDataScrollView" customModuleProvider="target">
                                 <rect key="frame" x="16" y="402" width="288" height="30"/>
