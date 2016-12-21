@@ -24,7 +24,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var signupButton: UIButton!
     
     var oldUsername : String!
-    var userToEding : User!
+    var userToEdit : User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,19 +38,19 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if userToEding != nil {
+        if userToEdit != nil {
             prepareDataToEdit()
         }
     }
     
     func prepareDataToEdit() {
-        oldUsername = userToEding.userName        
+        oldUsername = userToEdit.userName
         usernameTextField.text = oldUsername
         passwordTextField.placeholder  = "Old password"
         verifiedTextField.placeholder  = "New password"
-        dateOfBirthTextField.text      = userToEding.dateOfBirth
-        placeOfBirthTextField.text     = userToEding.placeOfBirth
-        signupButton.titleLabel?.text  = "Save"
+        dateOfBirthTextField.text      = userToEdit.dateOfBirth
+        placeOfBirthTextField.text     = userToEdit.placeOfBirth
+        signupButton.setTitle("Save", for: .normal)
     }
     
     override func didReceiveMemoryWarning() {
@@ -71,7 +71,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func signinButtonTouchUpInside(_ sender: UIButton) {
-        if sender.titleLabel?.text == "Save" && userToEding != nil {
+        if sender.titleLabel?.text == "Save" && userToEdit != nil {
             
             
 //            if passwordTextField.text != "" {
@@ -81,11 +81,16 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
 //                
 //                })
 //            }else {
-                userToEding.userName        = usernameTextField.text!
-                userToEding.dateOfBirth     = dateOfBirthTextField.text!
-                userToEding.placeOfBirth    = placeOfBirthTextField.text!
+                userToEdit.userName        = usernameTextField.text!
+                userToEdit.dateOfBirth     = dateOfBirthTextField.text!
+                userToEdit.placeOfBirth    = placeOfBirthTextField.text!
+            if Service.isNotEmptyTextField(contentOf: usernameTextField, passwordTextField, verifiedTextField, dateOfBirthTextField, placeOfBirthTextField) {
+                let newUser = User()
+                newUser.userName = usernameTextField.text!
+            }
             
-                
+            //Service.updateUser(oldUser: userToEdit, newUser: )
+            
             
            // }
         }

@@ -39,6 +39,12 @@ class Service{
         let fetchRequest : NSFetchRequest<User> = User.fetchRequest()
         do{
             let users : [User] = try Service.context().fetch(fetchRequest)
+            
+            for eachUser in users {
+                print(eachUser.userName)
+                print(eachUser.password)
+            }
+            
             for eachUser in users {
                 if eachUser.userName == username && eachUser.password == password {
                     success(eachUser)
@@ -53,25 +59,42 @@ class Service{
         
     }
     
-    class func updateUser(oldUser: User, newUser : NSDictionary) {
+    class func updateUser(oldUser: User, newUser : User) {
+        
+        let predicate = NSPredicate(format: "userName == %@ and password == %@", oldUser.userName!, oldUser.password!)
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        fetchRequest.predicate = predicate
+        
+        do {
+            let fetchedEntities = try Service.context().fetch(fetchRequest) as! [User]
+            fetchedEntities.first?.userName = "sok"
+            // ... Update additional properties with new values
+        } catch {
+            // Do something in response to error condition
+        }
+        
+        Service.delegate().saveContext()
+        
         // Create Entity Description
-        let entityDescription = NSEntityDescription.entity(forEntityName: "User", in: Service.context())
+        //let entityDescription = NSEntityDescription.entity(forEntityName: "User", in: Service.context())
         
         // Initialize Batch Update Request
         
-        let batchUpdateRequest = NSBatchUpdateRequest(entity: entityDescription!)
+      //  let batchUpdateRequest = NSBatchUpdateRequest(entity: entityDescription!)
         
         // Configure Batch Update Request
-        batchUpdateRequest.resultType = .updatedObjectIDsResultType
-        batchUpdateRequest.propertiesToUpdate = newUser as? [AnyHashable : Any]
+       // batchUpdateRequest.resultType = .updatedObjectIDsResultType
+       // batchUpdateRequest.propertiesToUpdate = newUser as? [AnyHashable : Any]
         
-        do {
-            _ = try Service.context().execute(batchUpdateRequest) as! NSBatchUpdateResult
-            Service.context().object(with: oldUser.objectID)                                    
-        } catch {
-            let updateError = error as NSError
-            print("\(updateError), \(updateError.userInfo)")
-        }
+//        do {
+//            let managedObject = try Service.context().execute(batchUpdateRequest) as! NSBatchUpdateResult
+//            Service.context().object(with: oldUser.objectID)
+//            Service.context().refreshObject(managedObject, mergeChanges: false)
+//            Service.delegate().saveContext()
+//        } catch {
+//            let updateError = error as NSError
+//            print("\(updateError), \(updateError.userInfo)")
+//        }
     }
     
     class func messageBoxAlert (withTitle title : String, forMessage message : String ) -> UIAlertController {

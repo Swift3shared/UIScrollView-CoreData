@@ -18,6 +18,7 @@ class SidebarPopupViewController: UIViewController,UIGestureRecognizerDelegate {
     
     @IBOutlet weak var mainView: UIView!
     
+    @IBOutlet var editIfomationView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.0)
@@ -68,13 +69,22 @@ class SidebarPopupViewController: UIViewController,UIGestureRecognizerDelegate {
     }
 
     @IBAction func editButtonTouchDown(_ sender: Any) {
-        performSegue(withIdentifier: "editInformaionID", sender: self.user)
-        removeSlideRight()
+        //performSegue(withIdentifier: "editInformaionID", sender: self.user)
+        //removeSlideRight()
+        //self.view.isHidden =
+        //editIfomationView.isHidden = false
+        
+        editIfomationView.frame = view.frame
+        view.addSubview(editIfomationView)
+    }
+    
+    @IBAction func logOutButtonPressed(_ sender: Any) {
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? SignupViewController {
-            destination.userToEding = sender as! User
+            destination.userToEdit = sender as! User
         }
     }
     
