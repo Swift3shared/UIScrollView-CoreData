@@ -15,6 +15,9 @@
 		887CF8971E0937F5008606CF /* Popup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887CF8961E0937F5008606CF /* Popup.storyboard */; };
 		B9DB135E1E09749B00AE5F92 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB135D1E09749B00AE5F92 /* SignupViewController.swift */; };
 		B9DB13601E0974B400AE5F92 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB135F1E0974B400AE5F92 /* PickerViewController.swift */; };
+		B9DB13621E097C4200AE5F92 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB13611E097C4200AE5F92 /* Data.swift */; };
+		B9DB13681E097C7F00AE5F92 /* data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B9DB13661E097C7F00AE5F92 /* data.xcdatamodeld */; };
+		B9DB136A1E097CB800AE5F92 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB13691E097CB800AE5F92 /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		887CF8961E0937F5008606CF /* Popup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Popup.storyboard; sourceTree = "<group>"; };
 		B9DB135D1E09749B00AE5F92 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		B9DB135F1E0974B400AE5F92 /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		B9DB13611E097C4200AE5F92 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		B9DB13671E097C7F00AE5F92 /* data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = data.xcdatamodel; sourceTree = "<group>"; };
+		B9DB13691E097CB800AE5F92 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,9 @@
 				887CF8961E0937F5008606CF /* Popup.storyboard */,
 				B9DB135D1E09749B00AE5F92 /* SignupViewController.swift */,
 				B9DB135F1E0974B400AE5F92 /* PickerViewController.swift */,
+				B9DB13611E097C4200AE5F92 /* Data.swift */,
+				B9DB13661E097C7F00AE5F92 /* data.xcdatamodeld */,
+				B9DB13691E097CB800AE5F92 /* Service.swift */,
 			);
 			path = CoreDataScrollView;
 			sourceTree = "<group>";
@@ -146,7 +155,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9DB13681E097C7F00AE5F92 /* data.xcdatamodeld in Sources */,
+				B9DB136A1E097CB800AE5F92 /* Service.swift in Sources */,
 				B9DB13601E0974B400AE5F92 /* PickerViewController.swift in Sources */,
+				B9DB13621E097C4200AE5F92 /* Data.swift in Sources */,
 				887CF8951E09372B008606CF /* LoginViewController.swift in Sources */,
 				887CF8931E092EDF008606CF /* CustomView.swift in Sources */,
 				B9DB135E1E09749B00AE5F92 /* SignupViewController.swift in Sources */,
@@ -298,6 +310,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B9DB13661E097C7F00AE5F92 /* data.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B9DB13671E097C7F00AE5F92 /* data.xcdatamodel */,
+			);
+			currentVersion = B9DB13671E097C7F00AE5F92 /* data.xcdatamodel */;
+			path = data.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 887CF8731E090531008606CF /* Project object */;
 }

@@ -238,6 +238,9 @@
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signinButtonTouchUpInside:" destination="OEJ-WD-ty2" eventType="touchUpInside" id="tg5-gf-MVH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -256,6 +259,13 @@
                             <constraint firstItem="n5m-8W-6FS" firstAttribute="centerX" secondItem="pWd-uv-SHF" secondAttribute="centerX" id="syp-6C-qT9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateOfBirthTextField" destination="UHe-l9-6Bz" id="e2B-2H-f0w"/>
+                        <outlet property="passwordTextField" destination="QOx-g1-kdX" id="Ucx-v3-0j9"/>
+                        <outlet property="placeOfBirthTextField" destination="teD-Cu-wPs" id="xnw-Ye-Xjw"/>
+                        <outlet property="usernameTextField" destination="n5m-8W-6FS" id="hud-jV-MSO"/>
+                        <outlet property="verifiedTextField" destination="Jd5-WH-I6H" id="fEy-fA-tl0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YYy-ef-Nq5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

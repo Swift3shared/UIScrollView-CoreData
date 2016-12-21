@@ -24,7 +24,6 @@ class CDSUIButton : UIButton{
     }
 }
 
-
 @IBDesignable
 class CDSUITextField : UITextField{
     @IBInspectable
@@ -49,3 +48,7 @@ class CDSUITextField : UITextField{
     }
 }
 
+@IBDesignable
+class CDSUIDatePicker : UIDatePicker {
+  
+}
