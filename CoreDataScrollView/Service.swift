@@ -31,6 +31,21 @@ class Service{
         return true
     }
     
+    class func login(_ user : User) -> Bool {
+        
+        let fetchRequest : NSFetchRequest<User> = User.fetchRequest()
+        do{
+            let users : [User] = try Service.context().fetch(fetchRequest)
+            for user in users {
+                
+            }
+        } catch {
+            let error = error as NSError
+            print("*** ERROR *** \(error)")
+        }
+        return false
+    }
+    
     class func messageBoxAlert (withTitle title : String, forMessage message : String) -> UIAlertController {
         let okAction = UIAlertAction(title: "OK", style: .default)
         let uiAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
