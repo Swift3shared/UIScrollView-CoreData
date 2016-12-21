@@ -42,8 +42,12 @@ class PickerViewController: UIViewController {
     }
 
         
-    @IBAction func cancelButtonTouchUp(_ sender: Any) {
+    @IBAction func tets(_ sender: UIButton) {
         self.removePopup()
+    
+    }
+    @IBAction func cancelButtonTouchUp(_ sender: Any) {
+        
     }
     
     @IBAction func okButtonTouchUp(_ sender: Any) {

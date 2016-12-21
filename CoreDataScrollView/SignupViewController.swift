@@ -11,15 +11,20 @@ import CoreData
 
 class SignupViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var usernameTextField: CDSUITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
     
-    @IBOutlet weak var passwordTextField: CDSUITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBOutlet weak var verifiedTextField: CDSUITextField!
+    @IBOutlet weak var verifiedTextField: UITextField!
     
-    @IBOutlet weak var dateOfBirthTextField: CDSUITextField!
+    @IBOutlet weak var dateOfBirthTextField: UITextField!
     
-    @IBOutlet weak var placeOfBirthTextField: CDSUITextField!
+    @IBOutlet weak var placeOfBirthTextField: UITextField!
+    
+    @IBOutlet weak var signupButton: UIButton!
+    
+    var oldUsername : String!
+    var userToEding : User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +36,23 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         placeOfBirthTextField.delegate  = self
         
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if userToEding != nil {
+            prepareDataToEdit()
+        }
+    }
+    
+    func prepareDataToEdit() {
+        oldUsername = userToEding.userName        
+        usernameTextField.text = oldUsername
+        passwordTextField.placeholder  = "Old password"
+        verifiedTextField.placeholder  = "New password"
+        dateOfBirthTextField.text      = userToEding.dateOfBirth
+        placeOfBirthTextField.text     = userToEding.placeOfBirth
+        signupButton.titleLabel?.text  = "Save"
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         usernameTextField.becomeFirstResponder()
@@ -49,21 +70,41 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    @IBAction func signinButtonTouchUpInside(_ sender: Any) {
-        if Service.isNotEmptyTextField(contentOf: usernameTextField, dateOfBirthTextField, placeOfBirthTextField) {
-            if Service.isVerified(string: passwordTextField.text!, cmpareTo: verifiedTextField.text!) {
+    @IBAction func signinButtonTouchUpInside(_ sender: UIButton) {
+        if sender.titleLabel?.text == "Save" && userToEding != nil {
+            
+            
+//            if passwordTextField.text != "" {
+//                Service.login( oldUsername, passwordTextField.text!, success: { user in
+//                    
+//                }, error: { message in
+//                
+//                })
+//            }else {
+                userToEding.userName        = usernameTextField.text!
+                userToEding.dateOfBirth     = dateOfBirthTextField.text!
+                userToEding.placeOfBirth    = placeOfBirthTextField.text!
+            
                 
-                let user = User(context: Service.context())
-                user.userName       = usernameTextField.text!
-                user.password       = passwordTextField.text!
-                user.placeOfBirth   = dateOfBirthTextField.text!
-                user.placeOfBirth   = placeOfBirthTextField.text!
-                
-            }else {
-                self.present(Service.messageBoxAlert(withTitle: "Error!", forMessage: "Password and verified password in not match.") , animated: true, completion: nil)
+            
+           // }
+        }
+        else {
+            if Service.isNotEmptyTextField(contentOf: usernameTextField, dateOfBirthTextField, placeOfBirthTextField) {
+                if Service.isVerified(string: passwordTextField.text!, cmpareTo: verifiedTextField.text!) {
+                    
+                    let user = User(context: Service.context())
+                    user.userName       = usernameTextField.text!
+                    user.password       = passwordTextField.text!
+                    user.dateOfBirth    = dateOfBirthTextField.text!
+                    user.placeOfBirth   = placeOfBirthTextField.text!
+                    
+                }else {
+                    self.present(Service.messageBoxAlert(withTitle: "Error!", forMessage: "Password and verified password in not match.") , animated: true, completion: nil)
+                }
+            } else {
+                self.present(Service.messageBoxAlert(withTitle: "Requred!", forMessage: "All field is required.") , animated: true, completion: nil)
             }
-        } else {
-            self.present(Service.messageBoxAlert(withTitle: "Requred!", forMessage: "All field is required.") , animated: true, completion: nil)
         }
     }
 
@@ -81,20 +122,18 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         let datePickerePopup = UIStoryboard(name: "Popup", bundle: nil).instantiateViewController(withIdentifier: "pickerViewControllerID") as! PickerViewController
         datePickerePopup.isDatePicker = true
         datePickerePopup.delegate = self
-        self.addChildViewController(datePickerePopup)
         datePickerePopup.view.frame = self.view.frame
-        self.view.addSubview(datePickerePopup.view)
-        datePickerePopup.didMove(toParentViewController: self)
+        UIApplication.shared.delegate?.window!!.addSubview(datePickerePopup.view)
+        self.addChildViewController(datePickerePopup)
     }
     
     func pickerViewPopup() {
         let provincesPickerePopup = UIStoryboard(name: "Popup", bundle: nil).instantiateViewController(withIdentifier: "pickerViewControllerID") as! PickerViewController
         provincesPickerePopup.delegate = self
         provincesPickerePopup.data = provinces
-        self.addChildViewController(provincesPickerePopup)
         provincesPickerePopup.view.frame = self.view.frame
-        self.view.addSubview(provincesPickerePopup.view)
-        provincesPickerePopup.didMove(toParentViewController: self)
+        UIApplication.shared.delegate?.window!!.addSubview(provincesPickerePopup.view)
+        self.addChildViewController(provincesPickerePopup)
     }
     
 }

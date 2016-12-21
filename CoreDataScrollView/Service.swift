@@ -9,6 +9,9 @@
 import UIKit
 import CoreData
 
+typealias SuccessHandler = (User) -> ()
+typealias ErrorHandler = (String) -> ()
+
 class Service{
     class func delegate () -> AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate
@@ -31,22 +34,49 @@ class Service{
         return true
     }
     
-    class func login(_ user : User) -> Bool {
+    class func login(_ username : String, _ password : String, success : SuccessHandler, error : ErrorHandler) {
         
         let fetchRequest : NSFetchRequest<User> = User.fetchRequest()
         do{
             let users : [User] = try Service.context().fetch(fetchRequest)
-            for user in users {
-                
+            for eachUser in users {
+                if eachUser.userName == username && eachUser.password == password {
+                    //success(UserModel(userName : eachUser.userName!, password : eachUser.password!, dateOfBirth : eachUser.dateOfBirth!, placeOfBirth : eachUser.placeOfBirth!))
+                    
+                    success(eachUser)
+                    return
+                }
             }
         } catch {
             let error = error as NSError
             print("*** ERROR *** \(error)")
         }
-        return false
+        error("User name and password is not match.")
+        
     }
     
-    class func messageBoxAlert (withTitle title : String, forMessage message : String) -> UIAlertController {
+    class func updateUser(oldUser: User, newUser : NSDictionary) {
+        // Create Entity Description
+        let entityDescription = NSEntityDescription.entity(forEntityName: "User", in: Service.context())
+        
+        // Initialize Batch Update Request
+        
+        let batchUpdateRequest = NSBatchUpdateRequest(entity: entityDescription!)
+        
+        // Configure Batch Update Request
+        batchUpdateRequest.resultType = .updatedObjectIDsResultType
+        batchUpdateRequest.propertiesToUpdate = newUser as? [AnyHashable : Any]
+        
+        do {
+            _ = try Service.context().execute(batchUpdateRequest) as! NSBatchUpdateResult
+            Service.context().object(with: oldUser.objectID)                                    
+        } catch {
+            let updateError = error as NSError
+            print("\(updateError), \(updateError.userInfo)")
+        }
+    }
+    
+    class func messageBoxAlert (withTitle title : String, forMessage message : String ) -> UIAlertController {
         let okAction = UIAlertAction(title: "OK", style: .default)
         let uiAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         uiAlert.addAction(okAction)

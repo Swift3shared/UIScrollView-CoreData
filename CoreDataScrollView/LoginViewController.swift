@@ -24,5 +24,19 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
+    @IBAction func loginButtonTouchDown(_ sender: Any) {
+        
+        Service.login(userNameTextField.text!, passwordTextField.text!, success: { user in
+            performSegue(withIdentifier: "naturalParkID", sender: user)
+        }, error: {
+            message in
+            self.present(Service.messageBoxAlert(withTitle: "Error", forMessage: message), animated: true, completion: nil)
+        })
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? NaturalParkViewController {
+            destination.user = sender as! User
+        }
+    }
 }
