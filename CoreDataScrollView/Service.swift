@@ -41,8 +41,6 @@ class Service{
             let users : [User] = try Service.context().fetch(fetchRequest)
             for eachUser in users {
                 if eachUser.userName == username && eachUser.password == password {
-                    //success(UserModel(userName : eachUser.userName!, password : eachUser.password!, dateOfBirth : eachUser.dateOfBirth!, placeOfBirth : eachUser.placeOfBirth!))
-                    
                     success(eachUser)
                     return
                 }
