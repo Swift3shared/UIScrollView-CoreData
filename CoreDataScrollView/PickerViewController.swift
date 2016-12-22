@@ -20,7 +20,6 @@ class PickerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         showAnimate()
     }
@@ -41,39 +40,36 @@ class PickerViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-        
-    @IBAction func tets(_ sender: UIButton) {
-        self.removePopup()
-    
-    }
     @IBAction func cancelButtonTouchUp(_ sender: Any) {
-        
+         self.removePopup()
     }
-    
+
     @IBAction func okButtonTouchUp(_ sender: Any) {
-        let delegate = self.delegate as! SignupViewController
-        if isDatePicker {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MMM/dd/yyyy"
-            let dateString = dateFormatter.string(from: datePickerView.date)
-            delegate.dateOfBirthTextField.text = dateString
+        if let delegate = self.delegate as? SignupViewController {
+            if isDatePicker {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "MMM/dd/yyyy"
+                let dateString = dateFormatter.string(from: datePickerView.date)
+                delegate.dateOfBirthTextField.text = dateString
+            }else {
+                    delegate.placeOfBirthTextField.text = placeOfBirth ?? data?[0]
+            }
         }else {
-            delegate.placeOfBirthTextField.text = placeOfBirth ?? data?[0]
+            let delegate = self.delegate as? SidebarPopupViewController
+            if isDatePicker {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "MMM/dd/yyyy"
+                let dateString = dateFormatter.string(from: datePickerView.date)
+                delegate?.dateOfBirthTextField.text = dateString
+            }else {
+                delegate?.placeOfBirthTextField.text = placeOfBirth ?? data?[0]
+            }
         }
         removePopup()
     }
     
     func removePopup(){
-        UIView.animate(withDuration: 0.25, animations:{
-            self.view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-            self.view.alpha = 0.0
-                
-        }, completion : {(finished : Bool) in
-            if finished
-            {
-                self.view.removeFromSuperview()
-            }
-        })
+        CDSAnimation.fadeOut(self.view)
     }
     
     

@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? NaturalParkViewController {
+        if let destination = segue.destination as? CategoryViewController {
             destination.user = sender as! User
         }
     }

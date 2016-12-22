@@ -13,6 +13,7 @@ typealias SuccessHandler = (User) -> ()
 typealias ErrorHandler = (String) -> ()
 
 class Service{
+    
     class func delegate () -> AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate
     }
@@ -87,8 +88,17 @@ class Service{
         uiAlert.addAction(okAction)
         return uiAlert
     }
-    
-    
-    
+}
+
+fileprivate var queue : OperationQueue!
+class CDSOperationQueue{
+    class func shared() -> OperationQueue {
+        if queue == nil {
+            queue = OperationQueue()
+            return queue
+        }else {
+            return queue
+        }
+    }
 }
 

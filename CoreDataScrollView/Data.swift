@@ -10,22 +10,22 @@ import UIKit
 
 var provinces : [String] = ["Phnom Penh", "Kan Dal", "Takeo", "Svay Reang", "Prev Veng", "Bat Tam Bang", "Pailin"]
 
-var imageURLs = ["http://www.planetware.com/photos-large/F/france-paris-eiffel-tower.jpg",
+var imaggsUrls = [
+                "http://www.planetware.com/photos-large/F/france-paris-eiffel-tower.jpg",
                  "http://adriatic-lines.com/wp-content/uploads/2015/04/canal-of-Venice.jpg",
                  "http://algoos.com/wp-content/uploads/2015/08/ireland-02.jpg",
-                 "http://bdo.se/wp-content/uploads/2014/01/Stockholm1.jpg",
                  "https://i.ytimg.com/vi/c7oV1T2j5mc/maxresdefault.jpg",
-                 "https://s-media-cache-ak0.pinimg.com/originals/61/df/42/61df422d112485beb7c10be2c29acee5.jpg",
-                 "https://images6.alphacoders.com/488/thumb-350-488291.jpg",
-                 "https://wallpaperscraft.com/imagedota_2_art_heroes_93924_602x339.jpg"]
+                 ]
 
-var imageCategory : [UIImage] = [#imageLiteral(resourceName: "book"),#imageLiteral(resourceName: "Dota2"),#imageLiteral(resourceName: "bmw")]
+var imaggsUrls1 = [
+    "https://i.ytimg.com/vi/YhkCzscgEJI/sddefault.jpg",
+    "http://i.imgur.com/42lj1BD.jpg",
+    "https://cdn.steamstatic.com/apps/dota2/images/reborn/day1/Miniprofiles.jpg",
+    "http://img.ibxk.com.br/2015/06/13/13111812263741.jpg?w=794&h=529&mode=max"
+                ]
 
-enum categoryType {
-    case book
-    case dota2
-    case car
-}
+var imageCategory : [UIImage] = [#imageLiteral(resourceName: "book"),#imageLiteral(resourceName: "Dota2"),#imageLiteral(resourceName: "bmw"), #imageLiteral(resourceName: "honeymoonplace")]
+
 
 var bookURLs = [
     "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSzmWhSjnn6gnxLr-s57YPd0TeNvyh0JT6lXMLP_7jX58jHOk6U",
@@ -34,19 +34,12 @@ var bookURLs = [
     "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQwG8eqlYVy6r3EWXYclEhWDBbWoFwtteAf9B4J3JXgylzKLLicXg"
 ]
 
-//struct UserModel {
-//    var oldUserName     : String!
-//    var userName        : String!
-//    var password        : String!
-//    var dateOfBirth     : String!
-//    var placeOfBirth    : String!
-//    
-//    init(userName : String, password : String, dateOfBirth : String, placeOfBirth : String) {
-//        self.userName       = userName
-//        self.password       = password
-//        self.dateOfBirth    = dateOfBirth
-//        self.placeOfBirth   = placeOfBirth
-//    }
-//    
-//    init () {}
-//}
+let gameURLs = [
+    "https://i.ytimg.com/vi/YhkCzscgEJI/sddefault.jpg",
+    "http://i.imgur.com/42lj1BD.jpg",
+    "https://cdn.steamstatic.com/apps/dota2/images/reborn/day1/Miniprofiles.jpg",
+    "http://img.ibxk.com.br/2015/06/13/13111812263741.jpg?w=794&h=529&mode=max"
+]
+
+let categoryURLs = [bookURLs, gameURLs, imaggsUrls, imaggsUrls1]
+

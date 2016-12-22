@@ -42,7 +42,7 @@
                                             <color key="titleColor" red="1" green="0.20821956220000001" blue="0.16339715220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="tets:" destination="PRt-om-xGM" eventType="touchUpInside" id="ZMo-6g-Xnu"/>
+                                            <action selector="cancelButtonTouchUp:" destination="PRt-om-xGM" eventType="touchUpInside" id="TMI-hf-Aa5"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AG4-vG-qz6">

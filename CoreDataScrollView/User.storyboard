@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ayy-zc-X10">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ayy-zc-X10">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -333,17 +333,17 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="9KH-TE-EEm" kind="relationship" relationship="rootViewController" id="y5K-wv-39n"/>
+                        <segue destination="9KH-TE-EEm" kind="relationship" relationship="rootViewController" id="3cs-aI-ftJ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sah-2g-pfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-883" y="449"/>
+            <point key="canvasLocation" x="-919" y="75"/>
         </scene>
-        <!--Natural place-->
+        <!--Category-->
         <scene sceneID="JLT-qe-ZnB">
             <objects>
-                <viewController id="9KH-TE-EEm" customClass="NaturalParkViewController" customModule="CoreDataScrollView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9KH-TE-EEm" customClass="CategoryViewController" customModule="CoreDataScrollView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="O0C-Wb-ueS"/>
                         <viewControllerLayoutGuide type="bottom" id="gvO-xd-o31"/>
@@ -353,7 +353,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xe4-5Q-8xp">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="246"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="217"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="3" minimumInteritemSpacing="16" id="NUf-r8-sk9">
                                     <size key="itemSize" width="51" height="46"/>
@@ -377,19 +377,19 @@
                                 </collectionReusableView>
                             </collectionView>
                             <imageView userInteractionEnabled="NO" tag="81" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gqx-jP-Yrf">
-                                <rect key="frame" x="16" y="272" width="133" height="128"/>
+                                <rect key="frame" x="16" y="250" width="133" height="145"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" tag="82" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aQg-Mq-D9u">
-                                <rect key="frame" x="171" y="272" width="133" height="128"/>
+                                <rect key="frame" x="171" y="250" width="133" height="145"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" tag="83" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ed-8B-S9H">
-                                <rect key="frame" x="16" y="420" width="133" height="128"/>
+                                <rect key="frame" x="16" y="413" width="133" height="135"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" tag="84" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4vI-DC-LYK">
-                                <rect key="frame" x="171" y="420" width="133" height="128"/>
+                                <rect key="frame" x="171" y="413" width="133" height="135"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -400,11 +400,11 @@
                             <constraint firstAttribute="trailing" secondItem="xe4-5Q-8xp" secondAttribute="trailing" id="Jez-AL-JhP"/>
                             <constraint firstAttribute="trailing" secondItem="xe4-5Q-8xp" secondAttribute="trailing" id="Xrg-0Q-iFF"/>
                             <constraint firstItem="xe4-5Q-8xp" firstAttribute="centerX" secondItem="cEZ-dG-Lse" secondAttribute="centerX" id="elr-kd-Q1s"/>
-                            <constraint firstItem="gvO-xd-o31" firstAttribute="top" secondItem="xe4-5Q-8xp" secondAttribute="bottom" constant="322" id="qsC-9m-q2q"/>
+                            <constraint firstItem="gvO-xd-o31" firstAttribute="top" secondItem="xe4-5Q-8xp" secondAttribute="bottom" constant="351" id="qsC-9m-q2q"/>
                             <constraint firstItem="xe4-5Q-8xp" firstAttribute="leading" secondItem="cEZ-dG-Lse" secondAttribute="leading" id="sC6-sZ-HS2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Natural place" id="3ty-VN-cbh">
+                    <navigationItem key="navigationItem" title="Category" id="3ty-VN-cbh">
                         <barButtonItem key="rightBarButtonItem" title="user" id="034-JW-8By">
                             <connections>
                                 <action selector="userButtonPressed:" destination="9KH-TE-EEm" id="XI9-mi-5tk"/>
@@ -412,11 +412,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="collectionView" destination="xe4-5Q-8xp" id="hA5-9W-d3B"/>
                         <outlet property="imageView1" destination="gqx-jP-Yrf" id="MqL-KJ-aEn"/>
                         <outlet property="imageView2" destination="aQg-Mq-D9u" id="nJm-Hy-0bv"/>
                         <outlet property="imageView3" destination="0ed-8B-S9H" id="GOj-YP-XAi"/>
                         <outlet property="imageView4" destination="4vI-DC-LYK" id="it1-aF-PPx"/>
-                        <outlet property="naturalPlaceCollectionView" destination="xe4-5Q-8xp" id="cbV-x0-m7L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vph-MB-2EN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -490,20 +490,13 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Wb-1y-vKl">
-                                        <rect key="frame" x="8" y="242" width="224" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Change password">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qs3-Lx-s6P">
                                         <rect key="frame" x="0.0" y="275" width="240" height="1"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAy-Fp-e8E">
-                                        <rect key="frame" x="8" y="280" width="224" height="30"/>
+                                        <rect key="frame" x="8" y="242" width="224" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Log out">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -512,23 +505,6 @@
                                             <action selector="logOutButtonPressed:" destination="1s1-5g-55R" eventType="touchUpInside" id="JxY-1X-eyM"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BjR-4j-UJ0">
-                                        <rect key="frame" x="0.0" y="313" width="240" height="1"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7j-d4-Hlz">
-                                        <rect key="frame" x="8" y="318" width="224" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Delete account">
-                                            <color key="titleColor" red="1" green="0.20821956220000001" blue="0.16339715220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hr0-dZ-Pv4">
-                                        <rect key="frame" x="0.0" y="351" width="240" height="1"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.42611809750000001" green="0.61546875690000002" blue="0.72336632010000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -597,6 +573,9 @@
                                     <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="dateOfBirthPreesed:" destination="1s1-5g-55R" eventType="touchDown" id="E2y-wd-0eP"/>
+                            </connections>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Place of birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TK7-es-bGi" customClass="CDSUITextField" customModule="CoreDataScrollView" customModuleProvider="target">
                             <rect key="frame" x="23" y="181" width="267" height="30"/>
@@ -615,6 +594,9 @@
                                     <real key="value" value="12"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="placeOfBirthPressed:" destination="1s1-5g-55R" eventType="touchDown" id="Egc-MT-9au"/>
+                            </connections>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0g-FN-r0V" customClass="CDSUIButton" customModule="CoreDataScrollView" customModuleProvider="target">
                             <rect key="frame" x="76" y="288" width="162" height="30"/>
@@ -716,7 +698,7 @@
         <image name="exit-icon" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="3cs-aI-ftJ"/>
         <segue reference="SXi-TJ-iFf"/>
-        <segue reference="y5K-wv-39n"/>
     </inferredMetricsTieBreakers>
 </document>

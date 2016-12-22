@@ -98,7 +98,15 @@ class CDSAnimation {
     }
     
     class func fadeOut(_ view : UIView){
-        
+        UIView.animate(withDuration: 0.25, animations:{
+            view.transform  = CGAffineTransform(scaleX: 1.3, y: 1.3)
+            view.alpha      = 0.0
+        }, completion : {(finished : Bool) in
+            if finished
+            {
+                view.removeFromSuperview()
+            }
+        })
     }
     
     class func shake(_ view : UIView) {

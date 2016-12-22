@@ -21,8 +21,7 @@ class SidebarPopupViewController: UIViewController {
     @IBOutlet weak var dateOfBirthTextField: CDSUITextField!
     @IBOutlet weak var placeOfBirthTextField: CDSUITextField!    
     @IBOutlet weak var verifiedPasswordTextField: CDSUITextField!
-    
-    
+  
     @IBOutlet weak var mainView: UIView!
     @IBOutlet var editIfomationView: UIView!
     @IBOutlet weak var sidebarView: UIView!
@@ -38,8 +37,13 @@ class SidebarPopupViewController: UIViewController {
             placeOfBirthLabel.text  = user.placeOfBirth
         }
         
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(gestureRecognizer:)))
+        self.view.addGestureRecognizer(gestureRecognizer)
     }
     
+    func handleTap(gestureRecognizer: UIGestureRecognizer) {
+        removeSlideRight()
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -93,5 +97,33 @@ extension SidebarPopupViewController {
         }
         
     }
+    
+    @IBAction func placeOfBirthPressed(_ sender: Any) {
+        pickerViewPopup()
+    }
+    
+    @IBAction func dateOfBirthPreesed(_ sender: Any) {
+        datePickerPopup()
+    }
+    
+    func datePickerPopup() {
+        let datePickerePopup = UIStoryboard(name: "Popup", bundle: nil).instantiateViewController(withIdentifier: "pickerViewControllerID") as! PickerViewController
+        datePickerePopup.isDatePicker = true
+        datePickerePopup.delegate = self
+        datePickerePopup.view.frame = self.view.frame
+        UIApplication.shared.delegate?.window!!.addSubview(datePickerePopup.view)
+        self.addChildViewController(datePickerePopup)
+    }
+    
+    func pickerViewPopup() {
+        let provincesPickerePopup = UIStoryboard(name: "Popup", bundle: nil).instantiateViewController(withIdentifier: "pickerViewControllerID") as! PickerViewController
+        provincesPickerePopup.delegate = self
+        provincesPickerePopup.data = provinces
+        provincesPickerePopup.view.frame = self.view.frame
+        UIApplication.shared.delegate?.window!!.addSubview(provincesPickerePopup.view)
+        self.addChildViewController(provincesPickerePopup)
+    }
+
+    
 }
 

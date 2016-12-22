@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		885ADB4C1E0A2097009B2DA0 /* NaturalParkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885ADB4B1E0A2097009B2DA0 /* NaturalParkViewController.swift */; };
+		885ADB4C1E0A2097009B2DA0 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885ADB4B1E0A2097009B2DA0 /* CategoryViewController.swift */; };
 		885ADB4E1E0A216D009B2DA0 /* SidebarPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885ADB4D1E0A216D009B2DA0 /* SidebarPopupViewController.swift */; };
 		887CF87F1E090531008606CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887CF87E1E090531008606CF /* AppDelegate.swift */; };
 		887CF8861E090532008606CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 887CF8851E090532008606CF /* Assets.xcassets */; };
@@ -26,7 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		885ADB4B1E0A2097009B2DA0 /* NaturalParkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaturalParkViewController.swift; sourceTree = "<group>"; };
+		885ADB4B1E0A2097009B2DA0 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		885ADB4D1E0A216D009B2DA0 /* SidebarPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarPopupViewController.swift; sourceTree = "<group>"; };
 		887CF87B1E090531008606CF /* CoreDataScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		887CF87E1E090531008606CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 				B9DB13611E097C4200AE5F92 /* Data.swift */,
 				B9DB13661E097C7F00AE5F92 /* data.xcdatamodeld */,
 				B9DB13691E097CB800AE5F92 /* Service.swift */,
-				885ADB4B1E0A2097009B2DA0 /* NaturalParkViewController.swift */,
+				885ADB4B1E0A2097009B2DA0 /* CategoryViewController.swift */,
 				885ADB4D1E0A216D009B2DA0 /* SidebarPopupViewController.swift */,
 				B909B06F1E0AF1A000FF1B41 /* CustomNaturalParkCell.swift */,
 				B909B0701E0AF1A000FF1B41 /* CustomNaturalParkCell.xib */,
@@ -175,7 +175,7 @@
 				B9DB13681E097C7F00AE5F92 /* data.xcdatamodeld in Sources */,
 				B9DB136A1E097CB800AE5F92 /* Service.swift in Sources */,
 				885ADB4E1E0A216D009B2DA0 /* SidebarPopupViewController.swift in Sources */,
-				885ADB4C1E0A2097009B2DA0 /* NaturalParkViewController.swift in Sources */,
+				885ADB4C1E0A2097009B2DA0 /* CategoryViewController.swift in Sources */,
 				B9DB13601E0974B400AE5F92 /* PickerViewController.swift in Sources */,
 				B93E7B6F1E0B8206001C25F3 /* CDSToast.swift in Sources */,
 				B9DB13621E097C4200AE5F92 /* Data.swift in Sources */,
