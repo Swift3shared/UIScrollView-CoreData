@@ -32,8 +32,6 @@ class CategoryViewController: UIViewController {
         
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
-        
-        collectionView.register(UINib(nibName: "CustomNaturalParkCell", bundle: nil), forCellWithReuseIdentifier: "naturalPlaceCellID")
             
     }
 
@@ -53,8 +51,8 @@ class CategoryViewController: UIViewController {
     var lastIndex : Int = 0
 }
 
-extension CategoryViewController : UICollectionViewDataSource, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout {
-    
+extension CategoryViewController : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -62,31 +60,66 @@ extension CategoryViewController : UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageCategory.count
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "naturalPlaceCellID", for: indexPath) as! CustomNaturalParkCell
-        cell.configuration(imageCategory[indexPath.row])
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "naturalPlaceCellID", for: indexPath) as! CollectionCell
+       cell.configuration(imageCategory[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height-66)
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         downloadImages(categoryURLs[indexPath.row])
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width , height: collectionView.frame.height - 66)
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+
+//
+//        for cell in self.collectionView.visibleCells {
+//            let indexPath = self.collectionView.indexPath(for: cell)!
+//            let attributes = self.collectionView.layoutAttributesForItem(at: indexPath)!
+//            let cellRect = attributes.frame
+//            let cellFrameInSuperview = self.collectionView.convert(cellRect, to: self.collectionView.superview)
+//            let centerOffset = cellFrameInSuperview.origin.x - self.collectionView.contentInset.left
+//        }
+        
+        //collectionView.frame = CGRect(x: (pageWidth / 3), y: 10.0, width: pageWidth, height: pageHigh)
+        
+//        let pageWidth: Float = Float(collectionView.frame.width / 3) //480 + 50
+//        print(" half = \(pageWidth)")
+//        // width + space
+//        let currentOffset: Float = Float(scrollView.contentOffset.x)
+//        let targetOffset: Float = Float(targetContentOffset.pointee.x)
+//        var newTargetOffset: Float = 0
+//        
+//        print("current off set \(currentOffset)")
+//        print("target off set \(targetOffset)")
+//        
+//        if targetOffset > currentOffset {
+//            print("taget > ")
+//            newTargetOffset = ceilf(currentOffset / pageWidth) * pageWidth
+//        }
+//        else {
+//            print("taget < ")
+//            newTargetOffset = floorf(currentOffset / pageWidth) * pageWidth
+//        }
+//        if newTargetOffset < 0 {
+//            newTargetOffset = 0
+//        }
+//        else if (newTargetOffset > Float(scrollView.contentSize.width)){
+//            print("reach")
+//            newTargetOffset = Float(Float(scrollView.contentSize.width))
+//        }
+//        print("Page \(newTargetOffset)")
+//        
+//        targetContentOffset.pointee.x = CGFloat(currentOffset + 10)
+//        scrollView.setContentOffset(CGPoint(x: CGFloat(newTargetOffset), y: scrollView.contentOffset.y), animated: true)
+//        scrollView.updateConstraints()
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        
-        let center = CGPoint(x: scrollView.contentOffset.x + (scrollView.frame.width / 2), y: (scrollView.frame.height / 2))
-        if let ip = collectionView.indexPathForItem(at: center) {
-            self.collectionView.selectItem(at: ip, animated: true, scrollPosition: UICollectionViewScrollPosition())
-            // or this one //self.collectionView(self.collectionView, didSelectItemAt: ip)
-        }
-    }
     
     func downloadImages (_ imageUrls : [String]) {
         _ = CDSToast(message: "Start download image", target: self)

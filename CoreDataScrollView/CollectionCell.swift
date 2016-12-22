@@ -1,5 +1,5 @@
 //
-//  CustomNaturalParkCell.swift
+//  CollectionCell.swift
 //  CoreDataScrollView
 //
 //  Created by sok channy on 12/22/16.
@@ -8,9 +8,11 @@
 
 import UIKit
 
-class CustomNaturalParkCell: UICollectionViewCell {
-
+class CollectionCell: UICollectionViewCell {
+    
+    
     @IBOutlet weak var imageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

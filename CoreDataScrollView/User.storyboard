@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ayy-zc-X10">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ayy-zc-X10">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -333,7 +333,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="9KH-TE-EEm" kind="relationship" relationship="rootViewController" id="3cs-aI-ftJ"/>
+                        <segue destination="ITq-C8-0hx" kind="relationship" relationship="rootViewController" id="aZc-1y-Slf"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sah-2g-pfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -355,24 +355,39 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xe4-5Q-8xp">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="217"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="3" minimumInteritemSpacing="16" id="NUf-r8-sk9">
-                                    <size key="itemSize" width="51" height="46"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="7" minimumInteritemSpacing="20" id="NUf-r8-sk9">
+                                    <size key="itemSize" width="260" height="139"/>
                                     <size key="headerReferenceSize" width="0.0" height="15"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="naturalPlaceCellID" id="2Pd-cV-x4s">
-                                        <rect key="frame" x="0.0" y="0.0" width="51" height="46"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="naturalPlaceCellID" id="2Pd-cV-x4s" customClass="CollectionCell" customModule="CoreDataScrollView" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="7" width="260" height="139"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="51" height="46"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="260" height="139"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dota2" translatesAutoresizingMaskIntoConstraints="NO" id="a0N-Gi-F8B">
+                                                    <rect key="frame" x="0.0" y="0.0" width="260" height="139"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="a0N-Gi-F8B" firstAttribute="top" secondItem="2Pd-cV-x4s" secondAttribute="top" id="2sh-bw-MXp"/>
+                                            <constraint firstAttribute="trailing" secondItem="a0N-Gi-F8B" secondAttribute="trailing" id="ee5-yA-5YQ"/>
+                                            <constraint firstItem="a0N-Gi-F8B" firstAttribute="leading" secondItem="2Pd-cV-x4s" secondAttribute="leading" id="gHx-Ae-qbJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="a0N-Gi-F8B" secondAttribute="bottom" id="ypY-yB-Wgk"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="a0N-Gi-F8B" id="olc-Ak-4G4"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="SY9-CU-0wZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="1" height="118"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1" height="153"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionReusableView>
                             </collectionView>
@@ -400,6 +415,7 @@
                             <constraint firstAttribute="trailing" secondItem="xe4-5Q-8xp" secondAttribute="trailing" id="Jez-AL-JhP"/>
                             <constraint firstAttribute="trailing" secondItem="xe4-5Q-8xp" secondAttribute="trailing" id="Xrg-0Q-iFF"/>
                             <constraint firstItem="xe4-5Q-8xp" firstAttribute="centerX" secondItem="cEZ-dG-Lse" secondAttribute="centerX" id="elr-kd-Q1s"/>
+                            <constraint firstItem="gvO-xd-o31" firstAttribute="top" secondItem="xe4-5Q-8xp" secondAttribute="bottom" constant="351" id="fGY-ey-hce"/>
                             <constraint firstItem="gvO-xd-o31" firstAttribute="top" secondItem="xe4-5Q-8xp" secondAttribute="bottom" constant="351" id="qsC-9m-q2q"/>
                             <constraint firstItem="xe4-5Q-8xp" firstAttribute="leading" secondItem="cEZ-dG-Lse" secondAttribute="leading" id="sC6-sZ-HS2"/>
                         </constraints>
@@ -695,10 +711,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Dota2" width="604" height="423"/>
         <image name="exit-icon" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3cs-aI-ftJ"/>
         <segue reference="SXi-TJ-iFf"/>
     </inferredMetricsTieBreakers>
 </document>
