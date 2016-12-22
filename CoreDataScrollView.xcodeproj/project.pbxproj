@@ -15,6 +15,9 @@
 		887CF8931E092EDF008606CF /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887CF8921E092EDF008606CF /* CustomView.swift */; };
 		887CF8951E09372B008606CF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887CF8941E09372B008606CF /* LoginViewController.swift */; };
 		887CF8971E0937F5008606CF /* Popup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887CF8961E0937F5008606CF /* Popup.storyboard */; };
+		B909B0711E0AF1A000FF1B41 /* CustomNaturalParkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B909B06F1E0AF1A000FF1B41 /* CustomNaturalParkCell.swift */; };
+		B909B0721E0AF1A000FF1B41 /* CustomNaturalParkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B909B0701E0AF1A000FF1B41 /* CustomNaturalParkCell.xib */; };
+		B93E7B6F1E0B8206001C25F3 /* CDSToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93E7B6E1E0B8206001C25F3 /* CDSToast.swift */; };
 		B9DB135E1E09749B00AE5F92 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB135D1E09749B00AE5F92 /* SignupViewController.swift */; };
 		B9DB13601E0974B400AE5F92 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB135F1E0974B400AE5F92 /* PickerViewController.swift */; };
 		B9DB13621E097C4200AE5F92 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB13611E097C4200AE5F92 /* Data.swift */; };
@@ -33,6 +36,9 @@
 		887CF8921E092EDF008606CF /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		887CF8941E09372B008606CF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		887CF8961E0937F5008606CF /* Popup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Popup.storyboard; sourceTree = "<group>"; };
+		B909B06F1E0AF1A000FF1B41 /* CustomNaturalParkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNaturalParkCell.swift; sourceTree = "<group>"; };
+		B909B0701E0AF1A000FF1B41 /* CustomNaturalParkCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomNaturalParkCell.xib; sourceTree = "<group>"; };
+		B93E7B6E1E0B8206001C25F3 /* CDSToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDSToast.swift; sourceTree = "<group>"; };
 		B9DB135D1E09749B00AE5F92 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		B9DB135F1E0974B400AE5F92 /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		B9DB13611E097C4200AE5F92 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -84,6 +90,9 @@
 				B9DB13691E097CB800AE5F92 /* Service.swift */,
 				885ADB4B1E0A2097009B2DA0 /* NaturalParkViewController.swift */,
 				885ADB4D1E0A216D009B2DA0 /* SidebarPopupViewController.swift */,
+				B909B06F1E0AF1A000FF1B41 /* CustomNaturalParkCell.swift */,
+				B909B0701E0AF1A000FF1B41 /* CustomNaturalParkCell.xib */,
+				B93E7B6E1E0B8206001C25F3 /* CDSToast.swift */,
 			);
 			path = CoreDataScrollView;
 			sourceTree = "<group>";
@@ -150,6 +159,7 @@
 			files = (
 				887CF8971E0937F5008606CF /* Popup.storyboard in Resources */,
 				887CF8911E090572008606CF /* User.storyboard in Resources */,
+				B909B0721E0AF1A000FF1B41 /* CustomNaturalParkCell.xib in Resources */,
 				887CF8861E090532008606CF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,11 +171,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B909B0711E0AF1A000FF1B41 /* CustomNaturalParkCell.swift in Sources */,
 				B9DB13681E097C7F00AE5F92 /* data.xcdatamodeld in Sources */,
 				B9DB136A1E097CB800AE5F92 /* Service.swift in Sources */,
 				885ADB4E1E0A216D009B2DA0 /* SidebarPopupViewController.swift in Sources */,
 				885ADB4C1E0A2097009B2DA0 /* NaturalParkViewController.swift in Sources */,
 				B9DB13601E0974B400AE5F92 /* PickerViewController.swift in Sources */,
+				B93E7B6F1E0B8206001C25F3 /* CDSToast.swift in Sources */,
 				B9DB13621E097C4200AE5F92 /* Data.swift in Sources */,
 				887CF8951E09372B008606CF /* LoginViewController.swift in Sources */,
 				887CF8931E092EDF008606CF /* CustomView.swift in Sources */,

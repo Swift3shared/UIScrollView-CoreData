@@ -23,9 +23,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var signupButton: UIButton!
     
-    var oldUsername : String!
-    var userToEdit : User!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,22 +32,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         dateOfBirthTextField.delegate   = self
         placeOfBirthTextField.delegate  = self
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        if userToEdit != nil {
-            prepareDataToEdit()
-        }
-    }
-    
-    func prepareDataToEdit() {
-        oldUsername = userToEdit.userName
-        usernameTextField.text = oldUsername
-        passwordTextField.placeholder  = "Old password"
-        verifiedTextField.placeholder  = "New password"
-        dateOfBirthTextField.text      = userToEdit.dateOfBirth
-        placeOfBirthTextField.text     = userToEdit.placeOfBirth
-        signupButton.setTitle("Save", for: .normal)
     }
     
     override func didReceiveMemoryWarning() {
@@ -71,45 +52,23 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func signinButtonTouchUpInside(_ sender: UIButton) {
-        if sender.titleLabel?.text == "Save" && userToEdit != nil {
-            
-            
-//            if passwordTextField.text != "" {
-//                Service.login( oldUsername, passwordTextField.text!, success: { user in
-//                    
-//                }, error: { message in
-//                
-//                })
-//            }else {
-                userToEdit.userName        = usernameTextField.text!
-                userToEdit.dateOfBirth     = dateOfBirthTextField.text!
-                userToEdit.placeOfBirth    = placeOfBirthTextField.text!
-            if Service.isNotEmptyTextField(contentOf: usernameTextField, passwordTextField, verifiedTextField, dateOfBirthTextField, placeOfBirthTextField) {
-                let newUser = User()
-                newUser.userName = usernameTextField.text!
+        if Service.isNotEmptyTextField(contentOf: usernameTextField, dateOfBirthTextField, placeOfBirthTextField) {
+            if Service.isVerified(string: passwordTextField.text!, cmpareTo: verifiedTextField.text!) {
+                
+                let user = User(context: Service.context())
+                user.userName       = usernameTextField.text!
+                user.password       = passwordTextField.text!
+                user.dateOfBirth    = dateOfBirthTextField.text!
+                user.placeOfBirth   = placeOfBirthTextField.text!
+                Service.delegate().saveContext()
+                
+                _ = navigationController?.popToRootViewController(animated: true)
+                
+            }else {
+                self.present(Service.messageBoxAlert(withTitle: "Error!", forMessage: "Password and verified password in not match.") , animated: true, completion: nil)
             }
-            
-            //Service.updateUser(oldUser: userToEdit, newUser: )
-            
-            
-           // }
-        }
-        else {
-            if Service.isNotEmptyTextField(contentOf: usernameTextField, dateOfBirthTextField, placeOfBirthTextField) {
-                if Service.isVerified(string: passwordTextField.text!, cmpareTo: verifiedTextField.text!) {
-                    
-                    let user = User(context: Service.context())
-                    user.userName       = usernameTextField.text!
-                    user.password       = passwordTextField.text!
-                    user.dateOfBirth    = dateOfBirthTextField.text!
-                    user.placeOfBirth   = placeOfBirthTextField.text!
-                    
-                }else {
-                    self.present(Service.messageBoxAlert(withTitle: "Error!", forMessage: "Password and verified password in not match.") , animated: true, completion: nil)
-                }
-            } else {
-                self.present(Service.messageBoxAlert(withTitle: "Requred!", forMessage: "All field is required.") , animated: true, completion: nil)
-            }
+        } else {
+            self.present(Service.messageBoxAlert(withTitle: "Requred!", forMessage: "All field is required.") , animated: true, completion: nil)
         }
     }
 

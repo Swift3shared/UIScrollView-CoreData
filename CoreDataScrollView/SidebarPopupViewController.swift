@@ -8,22 +8,29 @@
 
 import UIKit
 
-class SidebarPopupViewController: UIViewController,UIGestureRecognizerDelegate {
+class SidebarPopupViewController: UIViewController {
     
     var user : User!
+    var delegate : UIViewController!
     
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var dateOfBirthLabel: UILabel!
     @IBOutlet weak var placeOfBirthLabel: UILabel!
     
-    @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var usernameTextField: CDSUITextField!
+    @IBOutlet weak var dateOfBirthTextField: CDSUITextField!
+    @IBOutlet weak var placeOfBirthTextField: CDSUITextField!    
+    @IBOutlet weak var verifiedPasswordTextField: CDSUITextField!
     
+    
+    @IBOutlet weak var mainView: UIView!
     @IBOutlet var editIfomationView: UIView!
+    @IBOutlet weak var sidebarView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.0)
         showSlideRight()
-                
         
         if user != nil {
             usernameLabel.text      = user.userName
@@ -31,62 +38,60 @@ class SidebarPopupViewController: UIViewController,UIGestureRecognizerDelegate {
             placeOfBirthLabel.text  = user.placeOfBirth
         }
         
-        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.drag)))
     }
-//    func gestureRecognizer(gesture : UIGestureRecognizer, shouldBeRequiredToFailByGestureRecognizer:UIGestureRecognizer) -> Bool {
-//        print("asaasas")
-//        return true
-//    }
     
-    func drag(gesture: UIPanGestureRecognizer) {
-        print("")
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func removeSlideRight(){
-        UIView.animate(withDuration: 0.25, animations:{
-            self.view.transform = CGAffineTransform(translationX: 0 , y : 0)
-            self.view.alpha = 0.0
-        }, completion : {(finished : Bool) in
-            if finished
-            {
-                self.view.removeFromSuperview()
-            }
-        })
+        CDSAnimation.slideLeftToRightOut(self.view)
     }
     
     func showSlideRight(){
-        self.view.alpha = 0.5
-        self.view.transform = CGAffineTransform(translationX: self.view.bounds.width , y: 0)
-        UIView.animate(withDuration: 0.25, animations: {
-            self.view.transform = CGAffineTransform(translationX: 0 , y: 0)
-            self.view.alpha = 1.0
-        })
+        CDSAnimation.slideRightToLeftInt (self.view)
     }
+    
+    func prepareForEdit() {
+        usernameTextField.text      = user.userName
+        dateOfBirthTextField.text   = user.dateOfBirth
+        placeOfBirthTextField.text  = user.placeOfBirth
+    }
+}
 
+// action
+extension SidebarPopupViewController {
+    
     @IBAction func editButtonTouchDown(_ sender: Any) {
-        //performSegue(withIdentifier: "editInformaionID", sender: self.user)
-        //removeSlideRight()
-        //self.view.isHidden =
-        //editIfomationView.isHidden = false
-        
         editIfomationView.frame = view.frame
+        sidebarView.isHidden    = true        
+        CDSAnimation.fadeIn(editIfomationView)
         view.addSubview(editIfomationView)
+        prepareForEdit()
     }
     
     @IBAction func logOutButtonPressed(_ sender: Any) {
+        removeSlideRight()
+        _ = delegate.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    @IBAction func dissmisEditInforPressed(_ sender: Any) {
+        removeSlideRight()
+    }
+    
+    @IBAction func saveEditInforPressed(_ sender: Any) {
+        if user.password == verifiedPasswordTextField.text! {
+            if Service.isNotEmptyTextField(contentOf: usernameTextField, dateOfBirthTextField, placeOfBirthTextField) {
+                
+                let data : [String:String] = ["userName" : usernameTextField.text! , "dateOfBirth": dateOfBirthTextField.text!, "placeOfBirth": placeOfBirthTextField.text!]
+                Service.updateUser(oldUser: user, newUser: data)                
+                removeSlideRight()
+            }
+        }else{
+            CDSAnimation.shake(verifiedPasswordTextField)           
+        }
         
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? SignupViewController {
-            destination.userToEdit = sender as! User
-        }
-    }
-    
 }
 

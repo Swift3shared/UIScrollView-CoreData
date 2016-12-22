@@ -28,6 +28,7 @@ class Service{
     class func isNotEmptyTextField(contentOf textFields : UITextField...) -> Bool {
         for eachTextField in textFields {
             if eachTextField.text! == "" {
+                CDSAnimation.shake(eachTextField)
                 return false
             }
         }
@@ -59,7 +60,11 @@ class Service{
         
     }
     
-    class func updateUser(oldUser: User, newUser : User) {
+    class func save(){
+        
+    }
+    
+    class func updateUser(oldUser: User, newUser : [String:String]) {
         
         let predicate = NSPredicate(format: "userName == %@ and password == %@", oldUser.userName!, oldUser.password!)
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
@@ -67,34 +72,13 @@ class Service{
         
         do {
             let fetchedEntities = try Service.context().fetch(fetchRequest) as! [User]
-            fetchedEntities.first?.userName = "sok"
-            // ... Update additional properties with new values
+            fetchedEntities.first?.userName     = newUser["userName"]
+            fetchedEntities.first?.dateOfBirth  = newUser["dateOfBirth"]
+            fetchedEntities.first?.placeOfBirth = newUser["placeOfBirth"]
         } catch {
             // Do something in response to error condition
         }
-        
         Service.delegate().saveContext()
-        
-        // Create Entity Description
-        //let entityDescription = NSEntityDescription.entity(forEntityName: "User", in: Service.context())
-        
-        // Initialize Batch Update Request
-        
-      //  let batchUpdateRequest = NSBatchUpdateRequest(entity: entityDescription!)
-        
-        // Configure Batch Update Request
-       // batchUpdateRequest.resultType = .updatedObjectIDsResultType
-       // batchUpdateRequest.propertiesToUpdate = newUser as? [AnyHashable : Any]
-        
-//        do {
-//            let managedObject = try Service.context().execute(batchUpdateRequest) as! NSBatchUpdateResult
-//            Service.context().object(with: oldUser.objectID)
-//            Service.context().refreshObject(managedObject, mergeChanges: false)
-//            Service.delegate().saveContext()
-//        } catch {
-//            let updateError = error as NSError
-//            print("\(updateError), \(updateError.userInfo)")
-//        }
     }
     
     class func messageBoxAlert (withTitle title : String, forMessage message : String ) -> UIAlertController {
@@ -103,5 +87,8 @@ class Service{
         uiAlert.addAction(okAction)
         return uiAlert
     }
+    
+    
+    
 }
 

@@ -25,13 +25,13 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginButtonTouchDown(_ sender: Any) {
-        
-        Service.login(userNameTextField.text!, passwordTextField.text!, success: { user in
-            performSegue(withIdentifier: "naturalParkID", sender: user)
-        }, error: {
-            message in
-            self.present(Service.messageBoxAlert(withTitle: "Error", forMessage: message), animated: true, completion: nil)
-        })
+        if Service.isNotEmptyTextField(contentOf: userNameTextField, passwordTextField) {
+            Service.login(userNameTextField.text!, passwordTextField.text!, success: { user in
+                performSegue(withIdentifier: "naturalParkID", sender: user)
+            }, error: { message in
+                self.present(Service.messageBoxAlert(withTitle: "Error", forMessage: message), animated: true, completion: nil)
+            })
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
