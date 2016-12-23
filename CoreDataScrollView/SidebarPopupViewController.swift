@@ -61,6 +61,7 @@ class SidebarPopupViewController: UIViewController {
         usernameTextField.text      = user.userName
         dateOfBirthTextField.text   = user.dateOfBirth
         placeOfBirthTextField.text  = user.placeOfBirth
+        usernameTextField.becomeFirstResponder()
     }
 }
 

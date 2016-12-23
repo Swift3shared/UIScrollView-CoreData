@@ -23,6 +23,10 @@ class LoginViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        userNameTextField.becomeFirstResponder()
+    }
 
     @IBAction func loginButtonTouchDown(_ sender: Any) {
         if Service.isNotEmptyTextField(contentOf: userNameTextField, passwordTextField) {

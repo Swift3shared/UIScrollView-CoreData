@@ -36,6 +36,9 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         usernameTextField.becomeFirstResponder()
     }
     
