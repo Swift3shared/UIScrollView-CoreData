@@ -31,6 +31,8 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonTouchDown(_ sender: Any) {
         if Service.isNotEmptyTextField(contentOf: userNameTextField, passwordTextField) {
             Service.login(userNameTextField.text!, passwordTextField.text!, success: { user in
+                userNameTextField.text = ""
+                passwordTextField.text = ""
                 performSegue(withIdentifier: "naturalParkID", sender: user)
             }, error: { message in
                 self.present(Service.messageBoxAlert(withTitle: "Error", forMessage: message), animated: true, completion: nil)
