@@ -68,56 +68,57 @@ extension CategoryViewController : UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height-66)
+        return CGSize(width: collectionView.frame.width - 120, height: collectionView.frame.height-66)
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         downloadImages(categoryURLs[indexPath.row])
+        
+//        let cells = collectionView.visibleCells as! [CollectionCell]
+        
+//        if cells.count == 2 {
+//            cells[1].frame = CGRect(x: 40, y: 0, width: collectionView.bounds.width - 80, height: collectionView.bounds.height)
+//            cells[0].frame = CGRect(x: collectionView.bounds.width - 75, y: 0, width: collectionView.bounds.width - 60, height: collectionView.bounds.height)
+//        }
+
+        
+    }
+    
+    
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
     }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-
-//
-//        for cell in self.collectionView.visibleCells {
-//            let indexPath = self.collectionView.indexPath(for: cell)!
-//            let attributes = self.collectionView.layoutAttributesForItem(at: indexPath)!
-//            let cellRect = attributes.frame
-//            let cellFrameInSuperview = self.collectionView.convert(cellRect, to: self.collectionView.superview)
-//            let centerOffset = cellFrameInSuperview.origin.x - self.collectionView.contentInset.left
-//        }
         
-        //collectionView.frame = CGRect(x: (pageWidth / 3), y: 10.0, width: pageWidth, height: pageHigh)
+        let pageWidth: Float = Float(self.collectionView.frame.width / 3) //480 + 50
+        print(" half = \(pageWidth)")
+        // width + space
+        let currentOffset: Float = Float(scrollView.contentOffset.x)
+        let targetOffset: Float = Float(targetContentOffset.pointee.x)
+        var newTargetOffset: Float = 0
         
-//        let pageWidth: Float = Float(collectionView.frame.width / 3) //480 + 50
-//        print(" half = \(pageWidth)")
-//        // width + space
-//        let currentOffset: Float = Float(scrollView.contentOffset.x)
-//        let targetOffset: Float = Float(targetContentOffset.pointee.x)
-//        var newTargetOffset: Float = 0
-//        
-//        print("current off set \(currentOffset)")
-//        print("target off set \(targetOffset)")
-//        
-//        if targetOffset > currentOffset {
-//            print("taget > ")
-//            newTargetOffset = ceilf(currentOffset / pageWidth) * pageWidth
-//        }
-//        else {
-//            print("taget < ")
-//            newTargetOffset = floorf(currentOffset / pageWidth) * pageWidth
-//        }
-//        if newTargetOffset < 0 {
-//            newTargetOffset = 0
-//        }
-//        else if (newTargetOffset > Float(scrollView.contentSize.width)){
-//            print("reach")
-//            newTargetOffset = Float(Float(scrollView.contentSize.width))
-//        }
-//        print("Page \(newTargetOffset)")
-//        
-//        targetContentOffset.pointee.x = CGFloat(currentOffset + 10)
-//        scrollView.setContentOffset(CGPoint(x: CGFloat(newTargetOffset), y: scrollView.contentOffset.y), animated: true)
-//        scrollView.updateConstraints()
+        print("current off set \(currentOffset)")
+        print("target off set \(targetOffset)")
+        
+        if targetOffset > currentOffset {
+            print("taget > ")
+            newTargetOffset = ceilf(currentOffset / pageWidth) * pageWidth
+        }
+        else {
+            print("taget < ")
+            newTargetOffset = floorf(currentOffset / pageWidth) * pageWidth
+        }
+        if newTargetOffset < 0 {
+            newTargetOffset = 0
+        }
+        else if (newTargetOffset > Float(scrollView.contentSize.width)){
+            print("reach")
+            newTargetOffset = Float(Float(scrollView.contentSize.width))
+        }
+        print("Page \(newTargetOffset)")
+        
+        targetContentOffset.pointee.x = CGFloat(currentOffset)
+        scrollView.setContentOffset(CGPoint(x: CGFloat(newTargetOffset), y: scrollView.contentOffset.y), animated: true)
     }
     
     
@@ -158,7 +159,7 @@ extension CategoryViewController : UICollectionViewDataSource, UICollectionViewD
         })
         
         queue.addOperations([operation1,operation2,operation3, operation4], waitUntilFinished: false)
-        queue.cancelAllOperations()
+    
         operation1.completionBlock = {
             self.opComplete(queue.operationCount)
         }

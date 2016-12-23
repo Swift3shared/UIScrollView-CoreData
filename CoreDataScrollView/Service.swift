@@ -48,7 +48,7 @@ class Service{
             }
             
             for eachUser in users {
-                if eachUser.userName == username && eachUser.password == password {
+                if eachUser.userName == username.trimmingCharacters(in: .whitespacesAndNewlines) && eachUser.password == password.trimmingCharacters(in: .whitespacesAndNewlines) {
                     success(eachUser)
                     return
                 }

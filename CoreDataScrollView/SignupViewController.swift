@@ -59,8 +59,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             if Service.isVerified(string: passwordTextField.text!, cmpareTo: verifiedTextField.text!) {
                 
                 let user = User(context: Service.context())
-                user.userName       = usernameTextField.text!
-                user.password       = passwordTextField.text!
+                user.userName       = (usernameTextField.text!).trimmingCharacters(in: .whitespacesAndNewlines)
+                user.password       = (passwordTextField.text!).trimmingCharacters(in: .whitespacesAndNewlines)
                 user.dateOfBirth    = dateOfBirthTextField.text!
                 user.placeOfBirth   = placeOfBirthTextField.text!
                 Service.delegate().saveContext()
