@@ -51,6 +51,9 @@ class CategoryViewController: UIViewController {
     var lastIndex : Int = 0
 }
 
+
+// collection 
+
 extension CategoryViewController : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -84,43 +87,57 @@ extension CategoryViewController : UICollectionViewDataSource, UICollectionViewD
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return CGFloat(20)
+    }
     
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
     }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let pageWidth: Float = Float(self.collectionView.frame.width  / 3) + 20 //480 + 50
+        //print(" half = \(pageWidth)") //width + space
         
-        let pageWidth: Float = Float(self.collectionView.frame.width / 3) //480 + 50
-        print(" half = \(pageWidth)")
-        // width + space
         let currentOffset: Float = Float(scrollView.contentOffset.x)
+        
         let targetOffset: Float = Float(targetContentOffset.pointee.x)
+        
         var newTargetOffset: Float = 0
         
         print("current off set \(currentOffset)")
         print("target off set \(targetOffset)")
         
         if targetOffset > currentOffset {
-            print("taget > ")
+            
             newTargetOffset = ceilf(currentOffset / pageWidth) * pageWidth
+            print("taget > newtar \(newTargetOffset)")
+            
         }
         else {
-            print("taget < ")
             newTargetOffset = floorf(currentOffset / pageWidth) * pageWidth
+            print("taget eale newtar \(newTargetOffset)")
         }
         if newTargetOffset < 0 {
+            print("taget 0 ")
             newTargetOffset = 0
         }
         else if (newTargetOffset > Float(scrollView.contentSize.width)){
-            print("reach")
+            
             newTargetOffset = Float(Float(scrollView.contentSize.width))
+            print("taget > newtar \(newTargetOffset)")
         }
-        print("Page \(newTargetOffset)")
         
+        //print(currentOffset)
+        //print(targetContentOffset)
+        //newTargetOffset = Float(collectionView.frame.width)
         targetContentOffset.pointee.x = CGFloat(currentOffset)
-        scrollView.setContentOffset(CGPoint(x: CGFloat(newTargetOffset), y: scrollView.contentOffset.y), animated: true)
+        collectionView.setContentOffset(CGPoint(x: CGFloat(newTargetOffset), y: scrollView.contentOffset.y), animated: true)
     }
     
+//    func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint,
+//                             withScrollingVelocity velocity: CGPoint) -> CGPoint{
+//        return CGPoint(x: proposedContentOffset.x, y: proposedContentOffset.y)
+//    }
     
     func downloadImages (_ imageUrls : [String]) {
         _ = CDSToast(message: "Start download image", target: self)
@@ -201,4 +218,5 @@ extension CategoryViewController : UICollectionViewDataSource, UICollectionViewD
         imageView4.image = UIImage()
     }
 }
+
 
