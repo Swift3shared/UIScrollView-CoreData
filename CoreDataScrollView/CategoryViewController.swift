@@ -30,10 +30,8 @@ class CategoryViewController: UIViewController {
         collectionView.dataSource   = self
         collectionView.delegate     = self
         setupLayout()
-        
-        collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
-            
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,7 +65,7 @@ class CategoryViewController: UIViewController {
 }
 
 
-// collection 
+// collection
 extension CategoryViewController : UICollectionViewDataSource, UICollectionViewDelegate{
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -79,8 +77,8 @@ extension CategoryViewController : UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "naturalPlaceCellID", for: indexPath) as! CollectionCell
-       cell.configuration(imageCategory[indexPath.row])
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellID", for: indexPath) as! CollectionCell
+        cell.configuration(imageCategory[indexPath.row])
         return cell
     }
 
